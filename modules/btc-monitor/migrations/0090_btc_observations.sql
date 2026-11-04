@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS btc_observations (metric text NOT NULL, observed_at timestamptz NOT NULL, value double precision NOT NULL, source text NOT NULL, collected_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(metric, observed_at));

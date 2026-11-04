@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS btc_rule_states (rule text PRIMARY KEY, candidate_since timestamptz, last_checked timestamptz, samples integer NOT NULL DEFAULT 0, active_alert bigint, recovery_since timestamptz, recovery_samples integer NOT NULL DEFAULT 0, signature text);

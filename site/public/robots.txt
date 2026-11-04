@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /agent
+Disallow: /feed
+Disallow: /llms.txt
+Disallow: /openapi-v1.json
+Disallow: /api/
+Disallow: /admin/
+Disallow: /starred
+Disallow: /feedback
+
+Sitemap: {{siteUrl}}/sitemap.xml

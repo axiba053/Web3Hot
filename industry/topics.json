@@ -1,0 +1,169 @@
+{
+  "groups": [
+    {
+      "key": "company",
+      "name": "机构与生态",
+      "blurb": "追踪公链生态、交易平台与监管机构"
+    },
+    {
+      "key": "field",
+      "name": "关注方向",
+      "blurb": "主流币、资金环境与链上风险"
+    },
+    {
+      "key": "genre",
+      "name": "内容类型",
+      "blurb": "交易消息、空投活动、NFT 与方法解读"
+    }
+  ],
+  "topics": [
+    {
+      "slug": "ethereum",
+      "name": "Ethereum / 以太坊",
+      "group": "company",
+      "entityId": "ethereum",
+      "definition": "协议升级、测试网进展、生态与基金会动态。"
+    },
+    {
+      "slug": "binance",
+      "name": "Binance / 币安",
+      "group": "company",
+      "entityId": "binance",
+      "definition": "交易平台、钱包公告与活动规则。",
+      "aliases": [
+        "BinanceWallet",
+        "Binance Wallet",
+        "币安钱包"
+      ]
+    },
+    {
+      "slug": "coinbase",
+      "name": "Coinbase",
+      "group": "company",
+      "entityId": "coinbase",
+      "definition": "交易服务、机构业务、充提故障与恢复。"
+    },
+    {
+      "slug": "fed",
+      "name": "美联储",
+      "group": "company",
+      "entityId": "fed",
+      "definition": "货币政策、会议纪要与官员讲话。"
+    },
+    {
+      "slug": "sec",
+      "name": "SEC",
+      "group": "company",
+      "entityId": "sec",
+      "definition": "加密资产监管提案、执法与审批进展。"
+    },
+    {
+      "slug": "opensea",
+      "name": "OpenSea",
+      "group": "company",
+      "entityId": "opensea",
+      "definition": "NFT 铸造、白名单和活动阶段。"
+    },
+    {
+      "slug": "bitcoin",
+      "name": "BTC / 比特币",
+      "group": "field",
+      "tags": [
+        "BTC"
+      ],
+      "definition": "影响比特币的政策、机构行为与市场事件。"
+    },
+    {
+      "slug": "ether",
+      "name": "ETH / 以太坊",
+      "group": "field",
+      "tags": [
+        "ETH"
+      ],
+      "definition": "影响 ETH 的技术、市场和资金变化。"
+    },
+    {
+      "slug": "etf",
+      "name": "ETF 资金与审批",
+      "group": "field",
+      "tags": [
+        "ETF"
+      ],
+      "definition": "ETF 申请、审批、产品变化与日度资金流；区分统计日期和发布日期。"
+    },
+    {
+      "slug": "stablecoins",
+      "name": "稳定币",
+      "group": "field",
+      "tags": [
+        "稳定币"
+      ],
+      "definition": "供应、储备、脱锚与使用情况。"
+    },
+    {
+      "slug": "security",
+      "name": "链上安全",
+      "group": "field",
+      "tags": [
+        "安全事件"
+      ],
+      "definition": "安全警报、确认、调查与恢复进展。"
+    },
+    {
+      "slug": "derivatives",
+      "name": "合约市场",
+      "group": "field",
+      "tags": [
+        "合约市场"
+      ],
+      "definition": "持仓、资金费率与清算，明确交易所和统计窗口。"
+    },
+    {
+      "slug": "airdrops",
+      "name": "空投与活动",
+      "group": "genre",
+      "tags": [
+        "空投/活动"
+      ],
+      "definition": "资格查询、领取、任务与交易所活动，区分明确奖励和潜在机会。"
+    },
+    {
+      "slug": "nft",
+      "name": "NFT 活动",
+      "group": "genre",
+      "tags": [
+        "NFT活动"
+      ],
+      "definition": "铸造、白名单与领取的资格、成本和截止时间。"
+    },
+    {
+      "slug": "policy",
+      "name": "宏观与政策",
+      "group": "genre",
+      "tags": [
+        "宏观/政策"
+      ],
+      "definition": "宏观发布与加密监管进展。"
+    },
+    {
+      "slug": "protocol",
+      "name": "协议与技术",
+      "group": "genre",
+      "tags": [
+        "协议/技术"
+      ],
+      "definition": "公链与协议升级、延期、客户端和基础设施。"
+    },
+    {
+      "slug": "opinions",
+      "name": "观点与教程",
+      "group": "genre",
+      "tags": [
+        "观点/分析",
+        "教程/实践",
+        "论文/研究"
+      ],
+      "definition": "有事实依据的解读、研究与可复用方法。"
+    }
+  ]
+}

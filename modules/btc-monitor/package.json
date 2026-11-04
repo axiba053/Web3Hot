@@ -1,0 +1,8 @@
+{
+  "name": "@aihot/btc-monitor",
+  "private": true,
+  "type": "module",
+  "exports": { "./module": "./module.ts", "./server": "./server.ts", "./web": "./web.tsx" },
+  "dependencies": { "@aihot/backend": "*", "@aihot/contracts": "*", "nodemailer": "8.0.3" },
+  "devDependencies": { "@types/nodemailer": "^7.0.0" }
+}

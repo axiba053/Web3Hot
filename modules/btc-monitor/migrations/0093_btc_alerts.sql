@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS btc_alerts (id bigserial PRIMARY KEY, rule text NOT NULL, title text NOT NULL, severity text NOT NULL, evidence jsonb NOT NULL, advice text NOT NULL, created_at timestamptz NOT NULL DEFAULT now(), resolved_at timestamptz, delivery text NOT NULL DEFAULT 'pending', delivery_error text, delivery_at timestamptz);

@@ -1,0 +1,546 @@
+{
+  "$comment": "Web3 试运行来源。seed 只补充新来源；迁移已有站点前按 docs/deploy.md 备份并暂停旧来源。首批历史条目不作为当日新消息。",
+  "sources": [
+    {
+      "id": "web3-rss-fed-policy",
+      "name": "美联储 · 货币政策",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.federalreserve.gov/feeds/press_monetary.xml",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "fed",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-fed-speeches",
+      "name": "美联储 · 官员讲话",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "fed",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-bls-cpi",
+      "name": "BLS · CPI",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.bls.gov/feed/cpi.rss",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "bls",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-bls-jobs",
+      "name": "BLS · 就业",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.bls.gov/feed/empsit.rss",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "bls",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-sec",
+      "name": "SEC · 新闻稿",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.sec.gov/news/pressreleases.rss",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "sec",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-ethereum",
+      "name": "Ethereum Foundation",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://blog.ethereum.org/feed.xml",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "ethereum",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-coindesk",
+      "name": "CoinDesk",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "owner_entity_id": "coindesk",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-panews",
+      "name": "PANews · 中文快讯",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.panewslab.com/rss.xml?lang=zh&type=NEWS",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        },
+        "summaryIsBody": true
+      },
+      "tier": "T2",
+      "owner_entity_id": "panews",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-rss-coinbase-status",
+      "name": "Coinbase · 服务状态",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://status.coinbase.com/history.rss",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "owner_entity_id": "coinbase",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-square-announcement",
+      "name": "Binance Announcement",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.binance.com/bapi/composite/v2/friendly/pgc/content/queryUserProfilePageContentsWithFilter?targetSquareUid=ps1Rw5chtUtfUhsuJ1XDFQ&timeOffset=-1&filterType=ALL",
+        "mode": "json_api",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+          "Accept": "*/*",
+          "clienttype": "web",
+          "lang": "en"
+        },
+        "itemsPath": "data.contents",
+        "titlePaths": [
+          "title",
+          "bodyTextOnly"
+        ],
+        "summaryPaths": [
+          "bodyTextOnly"
+        ],
+        "summaryIsBody": true,
+        "publishedAtPath": "createTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "id",
+        "urlTemplate": "https://www.binance.com/square/post/{id}",
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        },
+        "publisherRole": "organization"
+      },
+      "tier": "T1_5",
+      "owner_entity_id": "binance",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-square-alpha_zh",
+      "name": "币安华语",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.binance.com/bapi/composite/v2/friendly/pgc/content/queryUserProfilePageContentsWithFilter?targetSquareUid=Vpo7Qwqy63rk7_Km3zYYaQ&timeOffset=-1&filterType=ALL",
+        "mode": "json_api",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+          "Accept": "*/*",
+          "clienttype": "web",
+          "lang": "zh-CN"
+        },
+        "itemsPath": "data.contents",
+        "titlePaths": [
+          "title",
+          "bodyTextOnly"
+        ],
+        "summaryPaths": [
+          "bodyTextOnly"
+        ],
+        "summaryIsBody": true,
+        "publishedAtPath": "createTime",
+        "publishedAtUnit": "epoch_ms",
+        "externalIdPath": "id",
+        "urlTemplate": "https://www.binance.com/square/post/{id}",
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        },
+        "publisherRole": "organization"
+      },
+      "tier": "T1_5",
+      "owner_entity_id": "binance",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-BinanceWallet",
+      "name": "X：BinanceWallet (@BinanceWallet)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/BinanceWallet/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        },
+        "publisherRole": "organization"
+      },
+      "tier": "T1_5",
+      "owner_entity_id": "binance",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-SlowMist_Team",
+      "name": "X：SlowMist_Team (@SlowMist_Team)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/SlowMist_Team/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        },
+        "publisherRole": "organization"
+      },
+      "tier": "T1_5",
+      "owner_entity_id": "slowmist",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-lookonchain",
+      "name": "X：lookonchain (@lookonchain)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/lookonchain/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "owner_entity_id": "lookonchain",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-cz-binance",
+      "name": "X：cz_binance (@cz_binance)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/cz_binance/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-zachxbt",
+      "name": "X：zachxbt (@zachxbt)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/zachxbt/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-watcherguru",
+      "name": "X：WatcherGuru (@WatcherGuru)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/WatcherGuru/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-cobie",
+      "name": "X：cobie (@cobie)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/cobie/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-cryptohayes",
+      "name": "X：CryptoHayes (@CryptoHayes)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/CryptoHayes/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-frankdegods",
+      "name": "X：frankdegods (@frankdegods)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/frankdegods/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    },
+    {
+      "id": "web3-x-wublockchain",
+      "name": "X：WuBlockchain (@WuBlockchain)",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://bian.sqdxw.top/web3-rss/WuBlockchain/rss",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "itemUrlPrefixRewrite": {
+          "from": "http://nitter.net/",
+          "to": "https://x.com/"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 15,
+      "tags": [
+        "Web3"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true
+    }
+  ]
+}

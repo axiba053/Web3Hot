@@ -1,0 +1,28 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.cache/
+.DS_Store
+.data/
+
+# Web production build
+apps/web/build/
+apps/web/.react-router/
+
+# Font package unpacked to regenerate the report nameplates (docs/customize.md)
+package/
+fontsource-noto-sans-sc-*.tgz
+
+# 本机素材、凭据与运行产物
+output/
+post-to-wechat/
+.baoyu-skills/
+.claude/
+docs/research/
+*.log
+*.dump
+*.sqlite*
+*.pem
+*.key
