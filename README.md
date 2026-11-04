@@ -1,25 +1,80 @@
-# Web3Hot
+<h1 align="center">Web3Hot</h1>
 
-面向 Web3 的热点聚合网站：采集公开信源，通过模型筛选、评分、摘要和归组，提供精选、全部动态、热点、主题、日报/周报/月报，以及 BTC 市场状态看板。
+<p align="center">
+  <b>把 Web3 动态汇成热点，把市场数据放在眼前。</b><br>
+  精选资讯 · 事件追踪 · Web3 日报 · BTC 市场状态
+</p>
 
-- 线上站点：[web3.sqdxw.top](https://web3.sqdxw.top)
-- 站长：币圈佬狗 · [@crypto_laogo](https://x.com/crypto_laogo)
-- 定位：AI狂热者 加密赌狗
-- 友情链接：[BN alpha 活动](https://bian.sqdxw.top/zh/) · [GitHub](https://github.com/axiba053)
+<p align="center">
+  <a href="https://web3.sqdxw.top">在线体验</a> ·
+  <a href="#这是什么">项目介绍</a> ·
+  <a href="#看一眼">页面预览</a> ·
+  <a href="#跑起来">快速部署</a> ·
+  <a href="https://github.com/axiba053/Web3Hot/issues">问题反馈</a>
+</p>
 
-本仓库公开当前站点源码，保留 Web3Hot 品牌、站长信息、Web3 分类、提示词及信源配置。不包含线上数据库、历史文章、采集记录、密钥或运行日志；首次部署从空数据库开始。复制部署时，请设置自己的域名、密码与模型凭据。
+<p align="center">
+  <a href="https://web3.sqdxw.top"><img src="docs/assets/web3hot/selected.png" alt="Web3Hot 线上精选页面：Web3 新闻、分类筛选和中文摘要" width="100%"></a>
+</p>
 
-## 功能与当前状态
+## 这是什么
 
-- Web3 新闻：精选、全部动态、事件归组、主题与周期报告。
-- BTC 看板：价格、日内走势、成交、资金费率、持仓、情绪与其他风险观察，显示来源时间和数据缺失状态；不构成投资建议。
-- 后台：信源管理、采集及模型任务、质量审核和运行状态。
-- **Agent 接入、MCP、RSS 与公开 API 当前暂停。** 页面入口已移除，网页服务对 `/agent`、`/api/mcp`、`/api/v1/*`、订阅及接入说明返回 404。内部 API 保留供网站 SSR 使用，不能直接暴露到公网。
-- `.env.example` 默认关闭采集、模型调用和邮件等开关。启用采集及付费模型调用前，请确认配置与预算。
+[Web3Hot](https://web3.sqdxw.top) 是一个面向 Web3 的热点聚合网站，基于开源项目 [AIHOT](https://github.com/KKKKhazix/AIHOT) 定制。
 
-## 快速部署
+它从公开信源持续收集动态，用模型筛选、评分，整理成中文标题和摘要；将不同来源对同一件事的报道归到一起，形成热点和时间线，再编成日报、周报与月报。
 
-建议 Linux 服务器至少 2 核、4 GB 内存，安装 Docker 和 Docker Compose。初始化脚本需要 Node.js 24.22.1 或更高版本。
+在资讯之外，Web3Hot 增加了 **BTC 市场状态看板**，把当天走势、资金费率、持仓、市场情绪和宏观日程放在同一个页面。看新闻，也能顺手看一眼市场正在发生什么。
+
+本仓库包含网站、后台、Web3 分类与信源配置、筛选和写作提示词，以及 BTC 监控模块。
+
+## 它是怎么工作的
+
+**采集 → 判重与预筛 → 两次独立评分 → 中文整理 → 事件归组 → 热点与成刊**
+
+一条资料进入后，先检查是否重复、是否相关，再按评分标准独立评估两次。通过门槛的内容进入精选，并整理出便于阅读的标题、摘要和推荐理由。筛选和写作的提示词保存在 [`industry/prompts/`](industry/prompts/)。
+
+同一件事可能同时出现在项目公告、媒体报道和 X 讨论中。Web3Hot 将相关报道归成一个事件，把后续进展放在一起。热点按事件和独立来源计算，减少同一家媒体重复报道对排序的影响。
+
+日报按规则汇集当天要闻，周报、月报再从日报中汇编。BTC 数据则由独立任务定时采集，页面读取已有观测，并标明数据时间、缺失和过期状态。
+
+## 你会得到什么
+
+| 功能 | 可以做什么 |
+| --- | --- |
+| **精选与全部动态** | 先读筛选后的重要消息，也可以按时间查看完整动态，通过分类和标签缩小范围 |
+| **中文阅读** | 查看中文标题、摘要与推荐理由，沿原文链接追溯消息来源 |
+| **事件与热点** | 把同一事件的多方报道和后续进展放在一起，关注当前讨论集中的话题 |
+| **日报、周报、月报** | 按不同时间尺度回顾行业进展，减少反复翻阅信息流 |
+| **主题与搜索** | 围绕项目、方向与内容类型持续跟踪，查找已有报道 |
+| **BTC 市场状态** | 查看当天价格、涨跌、振幅和成交额，以及费率、持仓、情绪、链上指标和宏观日历 |
+| **阅读设置** | 支持手机和电脑，提供深浅色外观、字体选择与本机收藏 |
+| **管理后台** | 管理信源、检查采集任务、调整模型配置、审核内容，并查看费用回执和运行状态 |
+
+## 看一眼
+
+以下均为 [web3.sqdxw.top](https://web3.sqdxw.top) 的真实页面截图，拍摄于 **2026 年 11 月 4 日**。新闻与行情随时间变化，截图用于展示页面。
+
+### BTC 市场状态
+
+当天走势和关键数值直接展示；指标解释、历史观测和完整日历按需展开。数据不足时保留缺失提示，不把缺失当作零。市场观察不构成投资建议。
+
+<a href="https://web3.sqdxw.top/btc"><img src="docs/assets/web3hot/btc.png" alt="Web3Hot BTC 市场状态页面：当天走势、风险观察、市场指标与宏观日历" width="100%"></a>
+
+<details>
+<summary><b>查看热点页面</b>：聚合事件，追踪讨论与进展</summary>
+<br>
+<a href="https://web3.sqdxw.top/hot"><img src="docs/assets/web3hot/hot.png" alt="Web3Hot 热点页面实拍" width="100%"></a>
+</details>
+
+<details>
+<summary><b>查看日报页面</b>：按天回顾 Web3 要闻</summary>
+<br>
+<a href="https://web3.sqdxw.top/daily"><img src="docs/assets/web3hot/daily.png" alt="Web3Hot 日报页面实拍" width="100%"></a>
+</details>
+
+## 跑起来
+
+需要 Docker（带 Compose）和一个 OpenAI 兼容的模型 API Key。建议服务器至少 **2 核、4 GB 内存**；使用初始化脚本时需要 Node.js 24.22.1 或更高版本。
 
 ```bash
 git clone https://github.com/axiba053/Web3Hot.git
@@ -27,49 +82,33 @@ cd Web3Hot
 cp .env.example .env
 ```
 
-按 [部署说明](docs/deploy.md) 填写随机密码、签名密钥、模型凭据及 `SITE_URL`，再启动：
+在 `.env` 中填写：
+
+- `SITE_URL`：你的站点访问地址，本机试用为 `http://localhost:3000`。
+- `ADMIN_PASSWORD`：至少 12 位的管理员密码。
+- `SESSION_SECRET`、`IMG_PROXY_SIGN_SECRET`、`POSTGRES_PASSWORD`：分别生成随机值，可使用 `openssl rand -hex 32`。
+- `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL`：模型服务地址、密钥和模型名称；服务商参数示例见 `.env.example`。
+
+确认配置和预算后，设置 `COLLECT_ENABLED=true`、`MODEL_CALLS_ENABLED=true` 开始采集和处理新闻；使用 BTC 看板时再设置 `BTC_MONITOR_ENABLED=true`。
 
 ```bash
 docker compose up -d --build
 ```
 
-默认访问 `http://localhost:3000`，管理员入口 `/admin`。空数据库没有历史新闻；确认后设置 `COLLECT_ENABLED=true`、`MODEL_CALLS_ENABLED=true` 并重建 worker/api，才会采集及处理文章。BTC 还需 `BTC_MONITOR_ENABLED=true`。费用取决于所用模型和采集量。
+打开 <http://localhost:3000>，后台在 `/admin`。首次部署从空数据库开始，运行中的 worker 会按配置采集和处理内容。域名、HTTPS、更新与备份步骤见 [部署说明](docs/deploy.md)。
 
-## 目录
+技术栈：**Node.js 24 · TypeScript · React Router · Fastify · PostgreSQL · pg-boss · Tailwind CSS · Docker Compose**。
 
-| 路径 | 内容 |
-| --- | --- |
-| `site/` | Web3Hot 品牌、站长信息、站点配置与条款 |
-| `industry/` | Web3 分类、主题、提示词、信源与评分样本 |
-| `modules/btc-monitor/` | BTC 采集、指标和看板 |
-| `apps/web/` | React Router 网站与网页服务 |
-| `apps/api/`、`apps/worker/` | 后端 HTTP API 与任务调度 |
-| `packages/` | 共享协议与后端逻辑 |
-| `database/migrations/` | 数据库迁移 |
+## 许可
 
-进一步阅读：[架构](docs/architecture.md) · [定制](docs/customize.md) · [信源](docs/sources.md) · [BTC 模块](modules/btc-monitor/README.md)。框架文档仍包含被暂停功能的实现说明，不代表当前对外开放。
+代码采用 [MIT 许可证](LICENSE)，保留原项目版权声明；第三方素材许可见 [NOTICE](NOTICE)。信源内容归原作者所有，默认展示摘要与原文链接。
 
-## 开发与检查
+## 关于站长
 
-```bash
-npm ci
-npm run typecheck
-npm run build -w @aihot/web
-node --test apps/web/tests/request-target.test.ts
-# 完整浏览器测试需要先安装 Playwright Chromium / WebKit。
-npx playwright install --with-deps chromium webkit
-node --test apps/web/tests/*.test.ts
-# 测试数据库必须以 _test 或 _ci 结尾；需要本地 PostgreSQL 17 及对应客户端。
-DATABASE_URL=postgres://localhost:5432/web3hot_test npm test
-# 网站启动后验证阅读页、资源和暂停接口。
-node scripts/smoke.ts --base http://localhost:3000
-node deploy/check-agent-access-paused.mjs http://localhost:3000
-```
+- **站长：** 币圈佬狗，欢迎关注 X 账户 [@crypto_laogo](https://x.com/crypto_laogo)
+- **定位：** AI狂热者 加密赌狗
+- **友情链接：** [BN alpha 活动](https://bian.sqdxw.top/zh/) · [GitHub](https://github.com/axiba053)
 
-部分完整回归仍沿用上游示例站的断言；本次发布不宣称完整测试全部通过。生产部署前请检查实际信源可达性、模型兼容性和任务日志。公开来源可能限流、变更或限制地区；配置存在不代表数据源始终可用。X 信源配置使用站点的 RSS 中转地址，自行部署可替换为自己的可用信源。
+## 致谢
 
-## 来源与许可证
-
-本项目基于 [KKKKhazix/AIHOT](https://github.com/KKKKhazix/AIHOT) 的 MIT 许可代码进行 Web3 定制，保留原版权声明，详见 [LICENSE](LICENSE) 与 [NOTICE](NOTICE)。这是独立发布的源码快照，不是原项目的官方版本；首次提交不包含上游提交历史。内部 npm 包名仍沿用 `@aihot/*`，以保持模块引用一致。
-
-本项目使用 Web3Hot 品牌和自有站点 Logo。第三方字体按各自许可证使用；信源内容归原作者所有，默认仅展示摘要和原文链接。部署者需审核并调整站点条款与隐私说明。
+感谢 **[数字生命卡兹克](https://github.com/KKKKhazix)** 开源 **[AIHOT](https://github.com/KKKKhazix/AIHOT)**，提供了从信源采集、内容筛选、事件归组到热点与报告的完整框架。Web3Hot 的 Web3 定制建立在这份工作之上，本说明的组织方式也参考了原项目。
